@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+     crossorigin=""/>
+     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <title>MapaBase</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sideBar">
+            <div id="mySidebar" class="sidebar">
+                <ol id="listado">
+                </ol>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">Contact</a>
+            </div>
+              
+            <div id="main">
+                <button class="openbtn" onclick="openNav()">☰</button>  
+            </div>
+            <div id="main1">
+                <button class="openbtn1" onClick="Action2()">☉</button>
+            </div>
+            <div id="selector">
+                <select id="select-psv" class="form-select" aria-label="Default select example">
+                  <option selected>选择</option>
+                  <option value="10.2111041, -83.8978103">IC Rio Frío K49+622.97</option>
+                  <option value="10.2158131,	-83.8718337">PSV La Unión K52+699.61</option>
+                  <option value="10.2076133,	-83.8301228">PSV Danta K57+568.42</option>
+                  <option value="10.2029746,	-83.810605">PSV Toro Amarillo K59+843.61</option>
+                  <option value="10.2022907,	-83.7924323">PSV Sinai K61+695.58</option>
+                  <option value="10.2029038,	-83.7817442">IC Guapiles K62+890.29</option>
+                  <option value="10.2037275,	-83.7665979">PSV Molino K64+578.57</option>
+                  <option value="10.2051434, 	-83.7425116">PSV Jimenez K67+205.63</option>
+                  <option value="10.2065182,	-83.6856189">PSV Guácimo K73+517.50</option>
+                  <option value="10.1691257,	-83.6066345">PSV Pocora K83+336.07</option>
+                  <option value="10.1280465,	-83.5590865">PSV Herediana K90+331.77</option>
+                  <option value="10.1185416,	-83.548409">PSV Francia K91+957.30</option>
+                  <option value="10.102079,	-83.5240729">PSV Cais Siquirres K95+200.69</option>
+                  <option value="10.09638859,	-83.51295948">IC Siquirres K96+962.98</option>
+                  <option value="10.0665756,	-83.3657201">PSV Barbilla K115+202.96</option>
+                  <option value="10.0457687,	-83.3005325">PSV Matina K124+251.29</option>
+                  <option value="9.9913698,	-83.1070779">IC TCM K147+179.12</option>
+                  <option value="9.9858,	-83.093187">IC Moin K149+912.83</option>
+                </select>
+              </div>
+        </div>
+        <div id="map">
+        </div>
+        
+    </div>
+    
+    <script src="codigo.js"></script>
+    <script src="lineaCentro.js"></script>
+    <script src="propiedades.js"></script>
+    <script src="union.js"></script>
+</body>
+</html>
