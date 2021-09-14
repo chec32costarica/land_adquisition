@@ -1,4 +1,41 @@
- /// Propiedades en Mapa desde GOOGLE SHEETS ////
+/// ICE AFECTCIONES  ////
+const urlIceAfect = "https://script.google.com/macros/s/AKfycbwUsJqLf264ZEb-yfuWL5pZzo72lb2LTy8ASkN9_QV1kTLMqE7UrzaI6NUpH5dbdit49w/exec";
+
+fetch(urlIceAfect)
+.then(d => d.json())
+.then(d => {
+    d.forEach(e => {
+
+        let icon_puentes = L.icon({
+        iconUrl: './img/ice.png',
+    
+        iconSize:     [30, 30], // size of the icon
+        iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
+        popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
+        });
+
+        
+
+        let puente = `<h2>电杆：<span class="catastro">${e[4]}<span/><h2/>`
+
+      
+            L.marker([e[0],e[1]],{icon: icon_puentes}).addTo(map)
+            .bindPopup(puente)
+
+            var circlePuente = L.circle([e[0], e[1]], {
+            color: "#ffffff",
+            fillColor: '#666',
+            fillOpacity: 0.05,
+            radius: 40,
+            weight: 1
+        }).addTo(map)
+       
+        
+    })  
+})
+
+
+/// Propiedades en Mapa desde GOOGLE SHEETS ////
 const urlExp = "https://script.google.com/macros/s/AKfycbxtUwKz593_-ZGIxGico3nJw5q4ni2yWUWaQ-ted8jiKTpSEQSKtBvUY7CsJpnhKiQt/exec";
 
 fetch(urlExp)
