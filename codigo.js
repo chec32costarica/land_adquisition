@@ -16,19 +16,43 @@ fetch(urlIceAfect)
 
         
 
-        let puente = `<h2>电杆：<span class="catastro">${e[4]}<span/><h2/>`
+        let puente = `<h2>电杆：<span class="catastro">${e[4]}<span/><span class="catastro">${e[4]}<span/><h2/>`
 
       
             L.marker([e[0],e[1]],{icon: icon_puentes}).addTo(map)
             .bindPopup(puente)
 
+            
+       
+        
+    })  
+})
+
+
+const urlIcePostes ="https://script.google.com/macros/s/AKfycbyIN9Txse4IApCoAeNP6fjlxryu0mYAcsGVBxOy2NwcJfm7KP5lq0zp0maGL7VOOVND7A/exec";
+
+fetch(urlIcePostes)
+.then(d => d.json())
+.then(d => {
+    d.forEach(e => {
+
+        
+
+        
+
+        let puente = `<h2>桥梁：<span class="catastro">${e[2]}<span/><h2/>`
+
+      
+            
+            
+
             var circlePuente = L.circle([e[0], e[1]], {
-            color: "#ffffff",
-            fillColor: '#666',
+            color: "#0055A3",
+            fillColor: '#0055A3',
             fillOpacity: 0.05,
-            radius: 40,
+            radius: 10,
             weight: 1
-        }).addTo(map)
+        }).addTo(map).bindPopup(puente)
        
         
     })  
@@ -257,7 +281,7 @@ fetch(dataweb)
 // Fly to PSV //
 
 document.getElementById("select-psv").addEventListener('change', function(e){
-    map.flyTo(e.target.value.split(","),18);
+    map.flyTo(e.target.value.split(","),19);
 })
 
 // Fly to PSV FIN //
