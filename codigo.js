@@ -286,6 +286,15 @@ document.getElementById("select-psv").addEventListener('change', function(e){
 
 // Fly to PSV FIN //
 
+// Fly to KM //
+
+document.getElementById("select-Km").addEventListener('change', function(e){
+    map.flyTo(e.target.value.split(","),17);
+})
+
+// Fly to PSV KM //
+
+
 
 // Localizador //
 
